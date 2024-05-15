@@ -33,7 +33,7 @@
       }
 
       function getMapUrl(position) {
-        var dish = dish = document.getElementById("random_food");
+        var dish = document.getElementById("random_food");
         var mapUrl = "https://www.google.com/maps/search/${dish}/@${position.coords.latitude},${position.coords.longitude}z?entry=ttu";
         window.location.href = mapUrl;
       }
