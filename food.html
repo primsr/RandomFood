@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What food should I eat?</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-color: white;">
+
+  
+  <button id="clickMe" class="button" onclick="generateFood(); getLocation();">Random Food</button>
+  <h2 id="random_food"></h2>
+  
+  
+    <script>
+      const x = document.getElementById("map");
+  
+      function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+      }
+  
+      function generateFood(){
+        var food = ["Pizza","Fried Chicken","Wings","Sushi"];
+        dish = food[getRandomInt(0, food.length)];
+        document.getElementById("random_food").innerHTML = dish;
+      }
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(getMapUrl);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function getMapUrl(position) {
+        var dish = dish = document.getElementById("random_food");
+        var mapUrl = "https://www.google.com/maps/search/${dish}/@${position.coords.latitude},${position.coords.longitude}z?entry=ttu";
+        window.location.href = mapUrl;
+      }
+
+    </script>
+  
+  </body>
+  </html>

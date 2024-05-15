@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What dessert should I eat?</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body style="background-color: white;">
+
+    
+    <button id="clickMe" class="button" onclick="generateDessert();">Random Dessert</button>
+    <h2 id="random_dessert"></h2>
+  
+    <script>
+      function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+      }
+  
+      function generateDessert(){
+          var dessert = ["Ice Cream", "Bubble Tea", "Cheese Cake", "Hot Chocolate", "Cake"];
+          var dish = dessert[getRandomInt(0, dessert.length)];
+              document.getElementById("random_dessert").innerHTML = dish;
+      }
+  
+    </script>
+  
+  </body>
+  </html>
